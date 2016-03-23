@@ -80,35 +80,77 @@
 .new-trip-body {
   height: 100vh;
   width: 100vw;
-  background: #0d47a1;
+  background: white;
   padding-top: 5%;
+  text-align: center;
 }
 .trip-input {
-  background: #616161;
+  background: #0d47a1;
   color: white;
   height: 50vh;
   width: 75vw;
-  text-align: center;
   margin: auto;
   padding-top: 2%;
+  position: relative;
 }
 #depart-date {
-  text-align: center;
   width: 50%;
+  /*position: absolute;*/
 }
 #return-date {
-  text-align: center;
   width: 50%;
+  /*position: absolute;*/
 }
 #city {
-  text-align: center;
   width: 50%;
+  /*position: absolute;*/
 }
 #state {
-  text-align: center;
   width: 50%;
+  /*position: absolute;*/
 }
 #description {
-  text-align: center;
   width: 50%;
+  /*position: absolute;*/
+}
+#submit-new-trip {
+  background-color: #0d47a1;
+  margin-top: 5%;
+}
+
+/*current trips page*/
+.expense-split-body {
+  height: 1000px;
+  width: 100%;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+.expense-list {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background: gray;
+}
+.expense-adder {
+  position: fixed;
+  height: 200px;
+  width: 450px;
+  background: black;
+  right: 80px;
+  margin-top: 25px;
+  text-align: center;
+}
+#cost-input {
+  width: 50%;
+}
+
+/*past trips*/
+.past-trips-list {
+  text-align: center;
+}
+
+/*past trip summary*/
+.past-trip-expense-list {
+  text-align: center;
 }

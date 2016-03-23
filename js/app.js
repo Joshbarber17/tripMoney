@@ -20,5 +20,9 @@ angular.module('tripMoney', ['ui.router']).config(function($stateProvider, $urlR
   .state('trips.pastTrips', {
     url: '/pastTrips',
     templateUrl: '../views/pastTrips.html'
+  })
+  .state('trips.pastTripSummary', {
+    url: '/pastTripSummary',
+    templateUrl: '../views/pastTripSummary.html'
   });
 });
