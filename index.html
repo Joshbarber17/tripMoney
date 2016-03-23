@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html ng-app='tripMoney'>
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <link rel="stylesheet" href="./css/styles.css" type='text/css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body ng-controller="homeCtrl">
+<body>
+  <ui-view></ui-view>
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.js'></script>
+  <script src ='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js'></script>
   <script src='./js/app.js' type='text/javascript'></script>
-  <script src='./js/controllers/homeCtrl.js' type='text/javascript'></script>
 </body>
 </html>

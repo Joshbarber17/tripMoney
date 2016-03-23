@@ -1,0 +1,114 @@
+/*initial landing page*/
+.landing-page {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+.landing-background {
+  display: flex;
+  position: absolute;
+}
+#pic1 {
+  height: 100vh;
+  width: 50vw;
+  background-image: url('../pictures/roadtrip2.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#pic2 {
+  height: 100vh;
+  width: 50vw;
+  background-image: url('../pictures/airplane.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.pathway {
+  height: 175px;
+  width: 500px;
+  background: #e53935;
+  position: absolute;
+  margin-left: 31%;
+  text-align: center;
+  margin-top: 20%;
+  padding-top: 65px;
+}
+
+#new-trip-button {
+  color: white
+}
+#current-trip-button {
+  color: white
+}
+#past-trips-button {
+  color: white
+}
+
+/*trips main page*/
+.top-pic {
+  background-image: url('../pictures/roadtrip.jpg');
+  width: 100vw;
+  height: 30vh;
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: cover;
+}
+
+.nav-bar {
+  width: 100vw;
+  height: 10vh;
+  background: black;
+  text-align: center;
+  padding-top:1.2%;
+}
+#new-trip-nav {
+  color: yellow;
+  background-color: black;
+}
+#current-trip-nav {
+  color: yellow;
+  background: black;
+}
+#past-trips-nav {
+  color: yellow;
+  background: black;
+}
+
+/*new trip page*/
+.new-trip-body {
+  height: 100vh;
+  width: 100vw;
+  background: #0d47a1;
+  padding-top: 5%;
+}
+.trip-input {
+  background: #616161;
+  color: white;
+  height: 50vh;
+  width: 75vw;
+  text-align: center;
+  margin: auto;
+  padding-top: 2%;
+}
+#depart-date {
+  text-align: center;
+  width: 50%;
+}
+#return-date {
+  text-align: center;
+  width: 50%;
+}
+#city {
+  text-align: center;
+  width: 50%;
+}
+#state {
+  text-align: center;
+  width: 50%;
+}
+#description {
+  text-align: center;
+  width: 50%;
+}
