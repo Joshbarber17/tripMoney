@@ -48,7 +48,6 @@
 
 /*trips main page*/
 .top-pic {
-  background-image: url('../pictures/roadtrip.jpg');
   width: 100vw;
   height: 30vh;
   background-repeat: no-repeat;
@@ -62,6 +61,7 @@
   background: black;
   text-align: center;
   padding-top:1.2%;
+  margin-top: 0;
 }
 #new-trip-nav {
   color: yellow;
@@ -117,6 +117,7 @@
   background-color: #0d47a1;
   margin-top: 5%;
 }
+
 
 /*current trips page*/
 .expense-split-body {
