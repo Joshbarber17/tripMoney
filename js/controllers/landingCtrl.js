@@ -1,5 +1,6 @@
-angular.module('tripMoney').controller('landingCtrl', function($scope){
+angular.module('tripMoney').controller('landingCtrl', function($scope, $state){
   $scope.flyOrDrive = function() {
-    prompt('Will you be driving, or flying?');
+    var trip = prompt('Will you be driving, or flying?');
+    $state.go('trips.newTrip', {travelType: trip});
   };
 });

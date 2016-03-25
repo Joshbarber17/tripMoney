@@ -13,7 +13,8 @@ angular.module('tripMoney', ['ui.router']).config(function($stateProvider, $urlR
   .state('trips.newTrip', {
     url: '/newTrip',
     templateUrl: '../views/newTrip.html',
-    controller: 'newTripCtrl'
+    controller: 'newTripCtrl',
+    params: {travelType: null}
   })
   .state('trips.currentTrip', {
     url: '/currentTrip',
