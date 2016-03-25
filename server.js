@@ -15,17 +15,31 @@ mongoose.connection.once('open', function(){ //once the connection is open, call
 app.use(express.static(__dirname+'/public'));
 //end of the server portion
 
-//newTripSchema
+//newTripSchema and new trip post
 
-var newTrip = require('./schemas/newTrip.js');
-app.post('/api/newTrip', function(req, res, next){
-  var trip = new newTrip(req.body);
-  trip.save(function(err, response){
+var trip = require('./schemas/newTrip.js'); //new trip schema
+app.post('/api/trips', function(req, res, next){ //post a new trip
+  var newTrip = new trip(req.body);
+  newTrip.save(function(err, response){
     if (err) {
       return res.status(400).send(err);
     }
     else {
       return res.send(response);
     }
+  });
+});
+//end of new trip post
+
+
+//current trip page
+app.get('/api/getCurrentTrip', function(req, res, next){
+  trip.findOne({status: 'current'}, function(err, response) {
+      if (err) {
+        return res.status(400).send(err);
+      }
+      else {
+        return res.send(response);
+      }
   });
 });

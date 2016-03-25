@@ -8,6 +8,7 @@ var newTripSchema = new Schema ({
   state: {type: String, required: true},
   description: {type: String, required: true},
   // budget: {type: Number}, will add if I have trip-money
-  status: {type: String}
+  status: {type: String},
+  tripType: {type: String, required: true}
 });
-module.exports = mongoose.model('newTrip', newTripSchema);
+module.exports = mongoose.model('trip', newTripSchema);
