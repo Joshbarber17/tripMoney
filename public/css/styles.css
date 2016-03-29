@@ -135,7 +135,7 @@
 }
 .expense-adder {
   position: fixed;
-  height: 200px;
+  height: 400px;
   width: 450px;
   background: black;
   right: 80px;

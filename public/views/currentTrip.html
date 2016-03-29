@@ -3,11 +3,15 @@
   <div class='expense-split-body'>
     <div class='expense-list'>
       <ul ng-repeat='expense in expenses'>
-        ${{expense.cost}} on {{expense.category}} <a ng-click="deleteExpense(expense)" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
+        ${{expense.cost}} on {{expense.category}} at {{expense.businessName}} in {{expense.businessCity}}, {{expense.businessState}}
+        <a ng-click="deleteExpense(expense)" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
       </ul>
     </div>
     <div class='expense-adder'>
       $<input ng-model='expenseCost' type='number' id='cost-input' placeholder="Total Cost"></input>
+      <input ng-model='expenseBiz' id='cost-input' placeholder="Business Name"></input>
+      <input ng-model='expenseCity' id='cost-input' placeholder="City"></input>
+      <input ng-model='expenseState' id='cost-input' placeholder="State"></input>
       <p>
         <label>Expense Category</label>
           <select ng-model='expenseCategory' class="browser-default">
@@ -15,9 +19,10 @@
             <option value="Fuel">Fuel</option>
             <option value="Food">Food</option>
             <option value="Hotel">Hotel</option>
+            <option value="Gambling">Gambling</option>
           </select>
       </p>
-      <button ng-click='submitExpense(expenseCost, expenseCategory)'>Submit Expense</button>
+      <button ng-click='submitExpense(expenseCost, expenseCategory, expenseBiz, expenseCity, expenseState)'>Submit Expense</button>
     </div>
   </div>
 </body>

@@ -5,7 +5,7 @@ angular.module('tripMoney').directive('navBar', function(){
       picture: '='
     },
     templateUrl: './views/navPicture.html',
-    controller: function($scope, $state) {
+    controller: function($scope, $state, tripService) {
       $scope.flyOrDrive = function() {
         var trip = prompt('Will you be driving, or flying?');
         if (trip === null) {

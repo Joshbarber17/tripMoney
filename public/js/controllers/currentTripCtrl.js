@@ -8,11 +8,14 @@ angular.module('tripMoney').controller('currentTripCtrl', function($scope, tripS
       $scope.roadTripPicture = './pictures/roadtrip5.jpg';
     }
   });
-  $scope.submitExpense = function(expenseCost, expenseCategory) {
-    var newExpense = {cost: expenseCost, category: expenseCategory};
+  $scope.submitExpense = function(expenseCost, expenseCategory, expenseBiz, expenseCity, expenseState) {
+    var newExpense = {cost: expenseCost, category: expenseCategory, businessName: expenseBiz, businessCity: expenseCity, businessState: expenseState};
     tripService.makeNewExpense(newExpense).then(getCurrentExpenses);
     $scope.expenseCost = '';
     $scope.expenseCategory = '';
+    $scope.expenseBiz = '';
+    $scope.expenseCity = '';
+    $scope.expenseState = '';
   };
   var getCurrentExpenses = function() {
     tripService.getExpenses().then(function(res){
