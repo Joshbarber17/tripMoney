@@ -2,34 +2,22 @@
   <nav-bar picture='roadTripPicture'></nav-bar>
   <div class='expense-split-body'>
     <div class='expense-list'>
-      <ul>
-        <li>expense</li>
-        <li>expense</li>
-        <li>expense</li>
-        <li>expense</li>
-        <li>expense</li>
-        <li>expense</li>
-        <li>expense</li>
-        <li>expense</li>
-        <li>expense</li>
-        <li>expense</li>
-        <li>expense</li>
-        <li>expense</li>
-        <li>expense</li>
-        <li>expense</li>
-
+      <ul ng-repeat='expense in expenses'>
+        ${{expense.cost}} on {{expense.category}} <a ng-click="deleteExpense(expense)" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
       </ul>
     </div>
     <div class='expense-adder'>
-      <input id='cost-input' placeholder="Total Cost"></input>
+      $<input ng-model='expenseCost' type='number' id='cost-input' placeholder="Total Cost"></input>
       <p>
-        <a class='dropdown-button btn' data-activates='dropdown1'>Category</a>
-        <ul id='dropdown1' class='dropdown-content'>
-          <li><a>one</a></li>
-          <li><a>two</a></li>
-          <li><a>three</a></li>
-        </ul>
+        <label>Expense Category</label>
+          <select ng-model='expenseCategory' class="browser-default">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="Fuel">Fuel</option>
+            <option value="Food">Food</option>
+            <option value="Hotel">Hotel</option>
+          </select>
       </p>
+      <button ng-click='submitExpense(expenseCost, expenseCategory)'>Submit Expense</button>
     </div>
   </div>
 </body>

@@ -6,4 +6,29 @@ angular.module('tripMoney').service('tripService', function($http){
         data: newTrip
       });
   };
+  this.getCurrentTrip = function(){
+      return $http ({
+        method: 'GET',
+        url: '/api/getCurrentTrip',
+      });
+  };
+  this.makeNewExpense = function(expense) {
+    return $http ({
+      method: "POST",
+      url: '/api/expense',
+      data: expense,
+    });
+  };
+  this.getExpenses = function() {
+    return $http ({
+      method: "GET",
+      url: '/api/expenses'
+    });
+  };
+  this.deleteExpense = function(expense) {
+    return $http ({
+      method: "DELETE",
+      url: '/api/expenses/' + expense._id,
+    });
+  };
 });

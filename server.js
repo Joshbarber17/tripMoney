@@ -33,13 +33,76 @@ app.post('/api/trips', function(req, res, next){ //post a new trip
 
 
 //current trip page
-app.get('/api/getCurrentTrip', function(req, res, next){
+var expense = require('./schemas/expense.js');
+app.get('/api/getCurrentTrip', function(req, res, next){ //get current trip to populate picture in nave bar
   trip.findOne({status: 'current'}, function(err, response) {
       if (err) {
-        return res.status(400).send(err);
+        return res.status(500).send(err);
       }
       else {
         return res.send(response);
       }
   });
+});
+app.post('/api/expense', function(req, res, next){ //post expenses to the current trip
+  var newExpense = new expense(req.body);
+  newExpense.save(function(err, expense){
+    if (err) {
+      return res.status(400).send(err);
+    }
+    else {
+      trip.findOne({status: 'current'}, function(err, trip) {
+        if (err) {
+          return res.status(500).send(err);
+        }
+        else {
+          trip.expenses.push(expense._id);
+          trip.save(function(err, updatedTrip) {
+            if (err) {
+              return res.status(500).send(err);
+            }
+            else {
+              return res.send(updatedTrip);
+            }
+          });
+        }
+      });
+    }
+  });
+});
+app.get('/api/expenses', function(req, res, next) { //get expenses spec
+  trip.findOne({status: 'current'}).populate('expenses')
+  .exec(function(err, trip) {
+      if (err) {
+        return res.status(500).send(err);
+      }
+      else {
+        return res.send(trip.expenses);
+      }
+  });
+});
+app.delete('/api/expenses/:id', function(req, res, next) { //delete specific expense from the collection
+    expense.remove({_id: req.params.id}, function(err, response) {
+      if (err) {
+        return res.status(500).send(err);
+      }
+      else {
+        trip.findOne({status: 'current'}, function(err, trip) { //after expense is deleted..we must update the trip and take out the expense. this finds the current trip again
+          if (err) {
+            res.status(500).send(err);
+          }
+          else {
+            trip.expenses.splice(req.params.id, 1); //this takes the expense out
+            trip.save(function(err, updatedTrip) { //this saves and updates the trip
+              if (err) {
+                res.status(500).send(err);
+              }
+              else{
+                return res.status(200).send(updatedTrip);
+              }
+            });
+          }
+        });
+      }
+    });
 });

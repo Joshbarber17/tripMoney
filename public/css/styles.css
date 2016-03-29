@@ -146,6 +146,13 @@
   width: 50%;
 }
 
+.browser-default {
+  background-color: black;
+  color: yellow;
+  width: 75%;
+  margin: auto;
+}
+
 /*past trips*/
 .past-trips-list {
   text-align: center;

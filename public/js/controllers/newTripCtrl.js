@@ -1,10 +1,10 @@
 angular.module('tripMoney').controller('newTripCtrl', function($scope, tripService, $stateParams, $state){
   var picType = function($stateParams) {
-    if ($stateParams.travelType === 'driving') {
+    if ($stateParams.tripType === 'driving') {
         $scope.roadTripPicture = './pictures/roadtrip.jpg';
         return;
     }
-    else if ($stateParams.travelType === 'flying') {
+    else if ($stateParams.tripType === 'flying') {
         $scope.roadTripPicture = './pictures/airplaneRunway.jpg';
         return;
     }
