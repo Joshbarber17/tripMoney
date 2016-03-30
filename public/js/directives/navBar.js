@@ -21,6 +21,17 @@ angular.module('tripMoney').directive('navBar', function(){
           alert('Please enter driving or flying');
         }
       };
+      $scope.checkForCurrentTrip = function() {
+        tripService.getCurrentTrip().then(function(response) {
+          if (response.data.status === 'current') {
+            return $state.go('trips.currentTrip');
+
+          }
+          else if (response.data.status !== 'current') {
+            return alert('There is no trip in progress. Please start a new trip');
+          }
+        });
+      };
     }
   };
 });

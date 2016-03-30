@@ -40,7 +40,7 @@ app.get('/api/getCurrentTrip', function(req, res, next){ //get current trip to p
         return res.status(500).send(err);
       }
       else {
-        return res.send(response);
+        return res.status(200).send(response);
       }
   });
 });
@@ -92,7 +92,7 @@ app.delete('/api/expenses/:id', function(req, res, next) { //delete specific exp
             res.status(500).send(err);
           }
           else {
-            trip.expenses.splice(req.params.id, 1); //this takes the expense out
+            trip.expenses.splice(trip.expenses.indexOf(req.params.id), 1); //this takes the expense out
             trip.save(function(err, updatedTrip) { //this saves and updates the trip
               if (err) {
                 res.status(500).send(err);
@@ -106,3 +106,13 @@ app.delete('/api/expenses/:id', function(req, res, next) { //delete specific exp
       }
     });
 });
+// app.get('/api/checkForCurrentTrip', function (req, res, next) {
+//   trip.findOne({status: 'current'}, function (err, response) {
+//     if (err) {
+//       res.status(500).send(err);
+//     }
+//     else if (response === 'current') {
+//       res.status(200).send(response);
+//     }
+//   });
+// });

@@ -2,6 +2,6 @@
 <div class='top-pic' style='background-image: url({{picture}})'></div>
 <div class='nav-bar'>
   <a ng-click='flyOrDrive()' class="waves-effect waves-light btn" id='new-trip-nav'>New Trip</a>
-  <a ui-sref='trips.currentTrip' class="waves-effect waves-light btn" id='current-trip-nav'>Current Trip</a>
+  <a ng-click='checkForCurrentTrip()' class="waves-effect waves-light btn" id='current-trip-nav'>Current Trip</a>
   <a ui-sref='trips.pastTrips' class="waves-effect waves-light btn" id='past-trips-nav'>Past Trips</a>
 </div>

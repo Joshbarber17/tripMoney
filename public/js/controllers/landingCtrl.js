@@ -1,4 +1,4 @@
-angular.module('tripMoney').controller('landingCtrl', function($scope, $state){
+angular.module('tripMoney').controller('landingCtrl', function($scope, $state, tripService){
   $scope.flyOrDrive = function() {
     var trip = prompt('Will you be driving, or flying?');
     if (trip === null) {
@@ -13,5 +13,16 @@ angular.module('tripMoney').controller('landingCtrl', function($scope, $state){
     else {
       alert('Please enter driving or flying');
     }
+  };
+  $scope.checkForCurrentTrip = function() {
+    tripService.getCurrentTrip().then(function(response) {
+      if (response.data.status === 'current') {
+        return $state.go('trips.currentTrip');
+
+      }
+      else if (response.data.status !== 'current') {
+        return alert('There is no trip in progress. Please start a new trip');
+      }
+    });
   };
 });

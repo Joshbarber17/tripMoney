@@ -31,4 +31,10 @@ angular.module('tripMoney').service('tripService', function($http){
       url: '/api/expenses/' + expense._id,
     });
   };
+  this.checkForCurrentTrip = function() {
+    return $http ({
+      method: "GET",
+      url: '/api/getCurrentTrip'
+    });
+  };
 });
