@@ -127,11 +127,31 @@
   color: white;
   text-align: center;
 }
+.current-trip-detail-bar {
+  background: red;
+  width: 100vw;
+  height: 50px;
+  background: black;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  position: relative;
+  align-items: center;
+}
+#end-trip-button {
+  background: black;
+  color: yellow;
+  font-size: 12px;
+  margin-top: 20px;
+
+}
 .expense-list {
   position: absolute;
   height: 100%;
   width: 50%;
   background: gray;
+  overflow: hidden;
+  overflow: scroll;
 }
 .expense-adder {
   position: fixed;
@@ -139,8 +159,10 @@
   width: 450px;
   background: black;
   right: 80px;
-  margin-top: 25px;
+  margin-top: 5px;
+  padding-bottom: 50px;
   text-align: center;
+  overflow: scroll;
 }
 #cost-input {
   width: 50%;
@@ -161,4 +183,8 @@
 /*past trip summary*/
 .past-trip-expense-list {
   text-align: center;
+}
+#submitExpense {
+  background: black;
+  color: yellow;
 }

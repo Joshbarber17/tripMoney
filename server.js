@@ -89,7 +89,7 @@ app.delete('/api/expenses/:id', function(req, res, next) { //delete specific exp
       else {
         trip.findOne({status: 'current'}, function(err, trip) { //after expense is deleted..we must update the trip and take out the expense. this finds the current trip again
           if (err) {
-            res.status(500).send(err);
+            return res.status(500).send(err);
           }
           else {
             trip.expenses.splice(trip.expenses.indexOf(req.params.id), 1); //this takes the expense out
@@ -106,13 +106,35 @@ app.delete('/api/expenses/:id', function(req, res, next) { //delete specific exp
       }
     });
 });
-// app.get('/api/checkForCurrentTrip', function (req, res, next) {
-//   trip.findOne({status: 'current'}, function (err, response) {
-//     if (err) {
-//       res.status(500).send(err);
-//     }
-//     else if (response === 'current') {
-//       res.status(200).send(response);
-//     }
-//   });
-// });
+app.put('/api/endCurrentTrip', function(req, res, next) {
+  trip.findOne({status: 'current'}, function(err, trip) {
+    if (err) {
+      return res.status(500).send(err);
+    }
+    else {
+      trip.status = 'past';
+      trip.save(function(err, updatedTrip) {
+        if (err) {
+          return res.status(500).send(err);
+        }
+        else {
+          return res.status(200).send(updatedTrip);
+        }
+      });
+    }
+  });
+});
+//END OF CURRENT TRIPS page
+
+
+//PAST TRIPS page
+app.get('/api/getAllTrips', function(req, res, next) {
+  trip.find({status: 'past'}, function(err, trips) {
+    if (err) {
+      res.status(500).send(err);
+    }
+    else if (trips) {
+      res.status(200).send(trips);
+    }
+  });
+});

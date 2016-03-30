@@ -1,13 +1,9 @@
 <body>
   <nav-bar picture='roadTripPicture'></nav-bar>
   <section class='past-trips-list'>
-    <ul>
-      <li><i class='material-icons'>done</i><a ui-sref='trips.pastTripSummary'>trip1</a></li>
-      <li><i class='material-icons'>done</i>trip2</li>
-      <li><i class='material-icons'>done</i>trip3</li>
-      <li><i class='material-icons'>done</i>trip4</li>
-      <li><i class='material-icons'>done</i>trip5</li>
-      <li><i class='material-icons'>done</i>trip6</li>
+    <ul ng-repeat='trip in trips'>
+      <i class="material-icons">{{trip.icon}}</i>{{trip.city}}, {{trip.state}} on {{trip.departDate | date}}
+      <!-- <a ng-click="deleteTrip()" class="btn-floating waves-effect waves-light black"><i class="material-icons">delete_forever</i></a> -->
     </ul>
   </section>
 </body>

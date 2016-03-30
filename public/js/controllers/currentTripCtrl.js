@@ -1,4 +1,4 @@
-angular.module('tripMoney').controller('currentTripCtrl', function($scope, tripService){
+angular.module('tripMoney').controller('currentTripCtrl', function($scope, tripService, $state){
   tripService.getCurrentTrip().then(function(res){
     $scope.thisTrip = res.data;
     if ($scope.thisTrip.tripType === 'flying') {
@@ -27,6 +27,17 @@ angular.module('tripMoney').controller('currentTripCtrl', function($scope, tripS
     var confirm = window.confirm('Are you sure you want to delete this expense?');
     if (confirm) {
       tripService.deleteExpense(expense).then(getCurrentExpenses);
+    }
+    else {
+      return;
+    }
+  };
+  $scope.endCurrentTrip = function() {
+    var confirm = window.confirm('Are you sure you want to end this trip?');
+    if (confirm) {
+      tripService.endCurrentTrip().then(function() {
+        $state.go('trips.pastTrips');
+      });
     }
     else {
       return;

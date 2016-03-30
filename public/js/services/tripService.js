@@ -37,4 +37,16 @@ angular.module('tripMoney').service('tripService', function($http){
       url: '/api/getCurrentTrip'
     });
   };
+  this.endCurrentTrip = function() {
+    return $http ({
+      method: "PUT",
+      url: '/api/endCurrentTrip'
+    });
+  };
+  this.getAllTrips = function() {
+    return $http ({
+      method: "GET",
+      url: 'api/getAllTrips'
+    });
+  };
 });
