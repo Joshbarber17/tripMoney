@@ -29,6 +29,7 @@ angular.module('tripMoney', ['ui.router']).config(function($stateProvider, $urlR
   .state('trips.pastTripSummary', {
     url: '/pastTripSummary',
     templateUrl: '../views/pastTripSummary.html',
-    controller: 'pastTripSummaryCtrl'
+    controller: 'pastTripSummaryCtrl',
+    params: {_id: null}
   });
 });

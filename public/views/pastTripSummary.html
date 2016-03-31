@@ -1,27 +1,8 @@
 <body>
   <nav-bar picture='roadTripPicture'></nav-bar>
   <div>
-    <ul class='past-trip-expense-list'>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
-      <li>Expense</li>
+    <ul class='past-trip-expense-list' ng-repeat='expense in expenses'>
+      ${{expense.cost}} on {{expense.category}} at {{expense.businessName}} - {{expense.businessCity}}, {{expense.businessState}}
     </ul>
   </div>
 </body>

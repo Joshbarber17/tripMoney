@@ -1,4 +1,4 @@
-angular.module('tripMoney').controller('pastTripsCtrl', function($scope, tripService){
+angular.module('tripMoney').controller('pastTripsCtrl', function($scope, tripService, $state){
   $scope.roadTripPicture = './pictures/roadmap.png';
   $scope.trips = function() {
     tripService.getAllTrips().then(function(trips) {
@@ -14,4 +14,7 @@ angular.module('tripMoney').controller('pastTripsCtrl', function($scope, tripSer
     });
   };
   $scope.trips();
+  $scope.showTripSummary = function(trip) {
+    $state.go('trips.pastTripSummary', {_id: trip._id});
+  };
 });

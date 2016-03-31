@@ -174,10 +174,17 @@
   width: 75%;
   margin: auto;
 }
+#sort-expenses {
+  text-align: center;
+}
 
 /*past trips*/
 .past-trips-list {
   text-align: center;
+}
+#past-trips {
+  background: white;
+  color: black;
 }
 
 /*past trip summary*/

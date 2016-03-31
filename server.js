@@ -138,3 +138,26 @@ app.get('/api/getAllTrips', function(req, res, next) {
     }
   });
 });
+//END OF PAST TRIPS page
+
+//START OF PAST TRIP SUMMARY PAGE
+app.get('/api/showTripSummary/:id', function(req, res, next){
+  trip.findOne({_id: req.params.id}, function(err, trip) {
+      if (err) {
+        return res.status(500).send(err);
+      }
+      else {
+        return res.status(200).send(trip);
+      }
+  });
+});
+app.get('/api/getTripExpenses/:id', function(req, res, next){
+  trip.findOne({_id: req.params.id}).populate('expenses').exec(function(err, trip) {
+      if (err) {
+        return res.status(500).send(err);
+      }
+      else {
+        return res.status(200).send(trip.expenses);
+      }
+  });
+});

@@ -46,7 +46,19 @@ angular.module('tripMoney').service('tripService', function($http){
   this.getAllTrips = function() {
     return $http ({
       method: "GET",
-      url: 'api/getAllTrips'
+      url: '/api/getAllTrips'
+    });
+  };
+  this.showTripSummary = function(tripId) {
+    return $http ({
+      method: 'GET',
+      url: '/api/showTripSummary/' + tripId,
+    });
+  };
+  this.getSummaryExpenses = function(tripId) {
+    return $http ({
+      method: 'GET',
+      url: '/api/getTripExpenses/' + tripId,
     });
   };
 });

@@ -6,9 +6,8 @@
     </div>
     <div class='expense-list'>
       <button class="waves-effect waves-light btn" id='end-trip-button' ng-click='endCurrentTrip()'>End Current Trip</button>
-      <input type='text' placeholder='Filter by'></input>
-      <input type='text' placeholder="Sort by"></input>
-      <ul ng-repeat='expense in expenses'>
+      <input type='text' id='sort-expenses' ng-model='searchText' placeholder='Filter by'></input>
+      <ul ng-repeat='expense in expenses | filter: searchText'>
         ${{expense.cost}} on {{expense.category}} at {{expense.businessName}} in {{expense.businessCity}}, {{expense.businessState}}
         <a ng-click="deleteExpense(expense)" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
       </ul>

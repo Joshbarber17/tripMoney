@@ -2,8 +2,8 @@
   <nav-bar picture='roadTripPicture'></nav-bar>
   <section class='past-trips-list'>
     <ul ng-repeat='trip in trips'>
-      <i class="material-icons">{{trip.icon}}</i>{{trip.city}}, {{trip.state}} on {{trip.departDate | date}}
-      <!-- <a ng-click="deleteTrip()" class="btn-floating waves-effect waves-light black"><i class="material-icons">delete_forever</i></a> -->
+      <a ng-click='showTripSummary(trip)' class="waves-effect waves-light btn" id='past-trips'><i class="material-icons">{{trip.icon}}</i>{{trip.city}}, {{trip.state}} on {{trip.departDate | date}}</a>
+      <a ng-click="deleteTrip()" class="btn-floating waves-effect waves-light black"><i class="material-icons">delete_forever</i></a>
     </ul>
   </section>
 </body>
