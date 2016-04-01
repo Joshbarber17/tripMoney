@@ -1,7 +1,8 @@
 <body>
   <nav-bar picture='roadTripPicture'></nav-bar>
-  <div>
-    <ul class='past-trip-expense-list' ng-repeat='expense in expenses'>
+  <div class='past-trip-expense-list'>
+    <input id='summary-sort' ng-model='sortBy' placeholder="Sort by"></input>
+    <ul ng-repeat='expense in expenses | filter: sortBy'>
       ${{expense.cost}} on {{expense.category}} at {{expense.businessName}} - {{expense.businessCity}}, {{expense.businessState}}
     </ul>
   </div>

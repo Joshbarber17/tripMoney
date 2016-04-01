@@ -177,6 +177,10 @@
 #sort-expenses {
   text-align: center;
 }
+#submitExpense {
+  background: black;
+  color: yellow;
+}
 
 /*past trips*/
 .past-trips-list {
@@ -191,7 +195,9 @@
 .past-trip-expense-list {
   text-align: center;
 }
-#submitExpense {
-  background: black;
-  color: yellow;
+#summary-sort {
+  width: 25vw;
+  text-align: center;
+  /*border-bottom-color: black;
+  border-bottom-width: medium;*/
 }
