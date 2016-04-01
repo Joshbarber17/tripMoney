@@ -16,7 +16,7 @@ angular.module('tripMoney').service('tripService', function($http){
     return $http ({
       method: "POST",
       url: '/api/expense',
-      data: expense,
+      data: expense
     });
   };
   this.getExpenses = function() {
@@ -28,7 +28,7 @@ angular.module('tripMoney').service('tripService', function($http){
   this.deleteExpense = function(expense) {
     return $http ({
       method: "DELETE",
-      url: '/api/expenses/' + expense._id,
+      url: '/api/expenses/' + expense._id
     });
   };
   this.checkForCurrentTrip = function() {
@@ -59,6 +59,18 @@ angular.module('tripMoney').service('tripService', function($http){
     return $http ({
       method: 'GET',
       url: '/api/getTripExpenses/' + tripId,
+    });
+  };
+  this.deleteExpenses = function(trip) { //deletes all particular trip expenses out of the expenses collection before deleting trip
+    return $http ({
+      method: 'DELETE',
+      url: '/api/deleteExpenses/' + trip.expenses
+    });
+  };
+  this.deleteTrip = function (trip) {
+    return $http ({
+      method: 'DELETE',
+      url: '/api/deleteTrip/' + trip._id
     });
   };
 });

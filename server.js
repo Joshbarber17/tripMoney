@@ -131,13 +131,31 @@ app.put('/api/endCurrentTrip', function(req, res, next) {
 app.get('/api/getAllTrips', function(req, res, next) {
   trip.find({status: 'past'}, function(err, trips) {
     if (err) {
-      res.status(500).send(err);
+      return res.status(500).send(err);
     }
     else if (trips) {
-      res.status(200).send(trips);
+      return res.status(200).send(trips);
     }
   });
 });
+app.delete('/api/deleteExpenses/:expenses', function(req, res, next) { //deleting the expenses in the expense collection first before deleting entire trip
+  var expenseArray = req.params.expenses.split(',');
+  for (var i = 0; i < expenseArray.length; i++) {
+    expense.findByIdAndRemove(expenseArray[i], function(){
+    });
+  }
+});
+app.delete('/api/deleteTrip/:id', function(req, res, next) {
+  trip.findByIdAndRemove(req.params.id, function(err, response){
+    if (err) {
+      return res.status(500).send(err);
+    }
+    else {
+      return res.status(200).send(response);
+    }
+  });
+});
+
 //END OF PAST TRIPS page
 
 //START OF PAST TRIP SUMMARY PAGE
