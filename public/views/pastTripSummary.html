@@ -3,7 +3,7 @@
   <div class='past-trip-expense-list'>
     <input id='summary-sort' ng-model='sortBy' placeholder="Sort by"></input>
     <ul ng-repeat='expense in expenses | filter: sortBy'>
-      ${{expense.cost}} on {{expense.category}} at {{expense.businessName}} - {{expense.businessCity}}, {{expense.businessState}}
+      <li class="waves-effect waves-light btn" id='summary-expenses'>${{expense.cost}} on {{expense.category}} at {{expense.businessName}} - {{expense.businessCity}}, {{expense.businessState}}<li>
     </ul>
   </div>
 </body>

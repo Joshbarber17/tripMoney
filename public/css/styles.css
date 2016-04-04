@@ -28,22 +28,27 @@
 .pathway {
   height: 175px;
   width: 500px;
-  background: #e53935;
+  background: black;
   position: absolute;
   margin-left: 31%;
   text-align: center;
   margin-top: 20%;
   padding-top: 65px;
+  border-radius: 10px;
 }
 
 #new-trip-button {
-  color: white
+  color: black;
+  background: yellow;
 }
 #current-trip-button {
-  color: white
+  color: black;
+  background: yellow;
+  margin: 10px;
 }
 #past-trips-button {
-  color: white
+  color: black;
+  background: yellow;
 }
 
 /*trips main page*/
@@ -194,6 +199,10 @@
 /*past trip summary*/
 .past-trip-expense-list {
   text-align: center;
+}
+#summary-expenses {
+  background: white;
+  color: black;
 }
 #summary-sort {
   width: 25vw;
