@@ -5,7 +5,7 @@ angular.module('tripMoney').controller('currentTripCtrl', function($scope, tripS
       $scope.roadTripPicture = './pictures/airplane1.jpg';
     }
     else if ($scope.thisTrip.tripType === 'driving'){
-      $scope.roadTripPicture = './pictures/roadtrip5.jpg';
+      $scope.roadTripPicture = './pictures/roadtrip3.jpeg';
     }
   });
   $scope.submitExpense = function(expenseCost, expenseCategory, expenseBiz, expenseCity, expenseState) {
@@ -42,5 +42,13 @@ angular.module('tripMoney').controller('currentTripCtrl', function($scope, tripS
     else {
       return;
     }
+  };
+  $scope.getTotal = function (array) {
+    if (!array) return;
+    var total = 0 ;
+    for (var i = 0; i < array.length; i++) {
+      total += array[i].cost;
+    }
+    return total;
   };
 });

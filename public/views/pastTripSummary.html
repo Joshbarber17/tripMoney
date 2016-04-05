@@ -2,7 +2,8 @@
   <nav-bar picture='roadTripPicture'></nav-bar>
   <div class='past-trip-expense-list'>
     <input id='summary-sort' ng-model='sortBy' placeholder="Sort by"></input>
-    <ul ng-repeat='expense in expenses | filter: sortBy'>
+    <p id='summary-total'>Total: {{getSummaryTotal(result)| currency}}</p>
+    <ul ng-repeat='expense in result = (expenses | filter: sortBy)'>
       <li class="waves-effect waves-light btn" id='summary-expenses'>${{expense.cost}} on {{expense.category}} at {{expense.businessName}} - {{expense.businessCity}}, {{expense.businessState}}<li>
     </ul>
   </div>

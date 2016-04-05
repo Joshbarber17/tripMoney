@@ -33,8 +33,9 @@
   margin-left: 31%;
   text-align: center;
   margin-top: 20%;
-  padding-top: 65px;
+  padding-top: 55px;
   border-radius: 10px;
+  box-shadow: -20px 25px 7px -1px rgba(0,0,0,0.58);
 }
 
 #new-trip-button {
@@ -44,7 +45,7 @@
 #current-trip-button {
   color: black;
   background: yellow;
-  margin: 10px;
+  margin: 15px;
 }
 #past-trips-button {
   color: black;
@@ -62,23 +63,25 @@
 
 .nav-bar {
   width: 100vw;
-  height: 10vh;
+  height: 13vh;
   background: black;
   text-align: center;
-  padding-top:1.2%;
-  margin-top: 0;
+  padding-top:2.2%;
 }
 #new-trip-nav {
-  color: yellow;
-  background-color: black;
+  color: black;
+  background-color: yellow;
+  margin-right: 100px;
 }
 #current-trip-nav {
-  color: yellow;
-  background: black;
+  color: black;
+  background: yellow;
+
 }
 #past-trips-nav {
-  color: yellow;
-  background: black;
+  color: black;
+  background: yellow;
+  margin-left: 100px;
 }
 
 /*new trip page*/
@@ -92,11 +95,12 @@
 .trip-input {
   background: #0d47a1;
   color: white;
-  height: 60vh;
+  height: 50vh;
   width: 75vw;
   margin: auto;
   padding-top: 2%;
   position: relative;
+  box-shadow: -10px 15px 20px 0px rgba(0, 0, 0, .60);
 }
 #depart-date {
   width: 50%;
@@ -121,6 +125,7 @@
 #submit-new-trip {
   background-color: #0d47a1;
   margin-top: 5%;
+  box-shadow: -5px 5px 20px 0px rgba(0, 0, 0, .60);
 }
 
 
@@ -133,11 +138,10 @@
   text-align: center;
 }
 .current-trip-detail-bar {
-  background: red;
   width: 100vw;
   height: 50px;
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   text-align: center;
   font-size: 30px;
   position: relative;
@@ -145,16 +149,16 @@
 }
 #end-trip-button {
   background: black;
-  color: yellow;
+  color: white;
   font-size: 12px;
   margin-top: 20px;
-
+  box-shadow: -5px 7px 20px 0px rgba(0, 0, 0, .60);
 }
 .expense-list {
   position: absolute;
   height: 100%;
   width: 50%;
-  background: gray;
+  background: #0d47a1;
   overflow: hidden;
   overflow: scroll;
 }
@@ -162,20 +166,21 @@
   position: fixed;
   height: 400px;
   width: 450px;
-  background: black;
+  background: #0d47a1;
   right: 80px;
   margin-top: 5px;
-  padding-bottom: 50px;
+  padding-bottom: 75px;
   text-align: center;
   overflow: scroll;
+  box-shadow: -10px 10px 20px 0px rgba(0, 0, 0, .60);
 }
 #cost-input {
   width: 50%;
 }
 
 .browser-default {
-  background-color: black;
-  color: yellow;
+  background-color: #0d47a1;
+  color: white;
   width: 75%;
   margin: auto;
 }
@@ -184,6 +189,13 @@
 }
 #submitExpense {
   background: black;
+  color: white;
+  box-shadow: -15px 15px 20px 0px rgba(0, 0, 0, .60);
+}
+#delete-expense-btn {
+  background: black;
+}
+#total {
   color: yellow;
 }
 
@@ -209,4 +221,8 @@
   text-align: center;
   /*border-bottom-color: black;
   border-bottom-width: medium;*/
+}
+#summary-total {
+  color: red;
+  font-weight: bolder;
 }

@@ -2,14 +2,15 @@
   <nav-bar picture='roadTripPicture'></nav-bar>
   <div class='expense-split-body'>
     <div class='current-trip-detail-bar' ng-show'thisTrip'>
-      Showing current trip to {{thisTrip.city}}, {{thisTrip.state}}
+      Showing your current trip to {{thisTrip.city}}, {{thisTrip.state}}
     </div>
     <div class='expense-list'>
       <button class="waves-effect waves-light btn" id='end-trip-button' ng-click='endCurrentTrip()'>End Current Trip</button>
       <input type='text' id='sort-expenses' ng-model='searchText' placeholder='Filter by'></input>
-      <ul ng-repeat='expense in expenses | filter: searchText'>
+      <p id='total'>Total: {{getTotal(result)| currency}}</p>
+      <ul ng-repeat='expense in result=(expenses | filter: searchText)'>
         ${{expense.cost}} on {{expense.category}} at {{expense.businessName}} in {{expense.businessCity}}, {{expense.businessState}}
-        <a ng-click="deleteExpense(expense)" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
+        <a ng-click="deleteExpense(expense)" class="btn-floating btn-small waves-effect waves-light" id='delete-expense-btn'><i class="material-icons">delete_forever</i></a>
       </ul>
     </div>
     <div class='expense-adder'>
@@ -21,6 +22,8 @@
         <label>Expense Category</label>
           <select ng-model='expenseCategory' class="browser-default">
             <option value="" disabled selected>Choose your option</option>
+            <option value="Amusement Parks">Amusement Parks</option>
+            <option value="Entertainment">Entertainment</option>
             <option value="Food">Food</option>
             <option value="Flights">Flights</option>
             <option value="Fuel">Fuel</option>

@@ -20,4 +20,12 @@ angular.module('tripMoney').controller('pastTripSummaryCtrl', function($scope, $
     });
   };
   $scope.summaryExpenses(tripId);
+  $scope.getSummaryTotal = function (array) {
+    if (!array) return;
+    var total = 0 ;
+    for (var i = 0; i < array.length; i++) {
+      total += array[i].cost;
+    }
+    return total;
+  };
 });
