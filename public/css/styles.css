@@ -30,13 +30,14 @@
   width: 500px;
   background: black;
   position: absolute;
-  margin-left: 31%;
+  margin-left: 30vw;
   text-align: center;
-  margin-top: 20%;
+  margin-top: 40vh;
   padding-top: 55px;
   border-radius: 10px;
   box-shadow: -20px 25px 7px -1px rgba(0,0,0,0.58);
 }
+
 
 #new-trip-button {
   color: black;
@@ -225,4 +226,19 @@
 #summary-total {
   color: red;
   font-weight: bolder;
+}
+
+
+/*Media Queries*/
+@media(min-width: 1500px) {
+  .pathway {
+    margin-left: 38vw;
+
+  }
+}
+
+@media(max-width: 840px) {
+  .pathway {
+    margin-left: 20vw;
+  }
 }
