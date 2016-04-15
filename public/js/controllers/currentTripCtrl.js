@@ -5,7 +5,7 @@ angular.module('tripMoney').controller('currentTripCtrl', function($scope, tripS
       $scope.roadTripPicture = './pictures/airplane1.jpg';
     }
     else if ($scope.thisTrip.tripType === 'driving'){
-      $scope.roadTripPicture = './pictures/roadtrip3.jpeg';
+      $scope.roadTripPicture = './pictures/roadtrip5.jpeg';
     }
   });
   $scope.submitExpense = function(expenseCost, expenseCategory, expenseBiz, expenseCity, expenseState) {

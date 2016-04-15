@@ -1,5 +1,5 @@
 angular.module('tripMoney').controller('pastTripsCtrl', function($scope, tripService, $state){
-  $scope.roadTripPicture = './pictures/roadmap.png';
+  $scope.roadTripPicture = './pictures/map.jpg';
   $scope.getTrips = function() {
     tripService.getAllTrips().then(function(trips) {
       $scope.trips = trips.data;
