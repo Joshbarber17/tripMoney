@@ -1,3 +1,13 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  margin: 0;
+}
 /*initial landing page*/
 .landing-page {
   height: 100vh;
@@ -102,6 +112,7 @@
   padding-top: 2%;
   position: relative;
   box-shadow: -10px 15px 20px 0px rgba(0, 0, 0, .60);
+  overflow-y: auto;
 }
 #depart-date {
   width: 50%;
@@ -160,8 +171,7 @@
   height: 100%;
   width: 50%;
   background: #0d47a1;
-  overflow: hidden;
-  overflow: scroll;
+  overflow-y: auto;
 }
 .expense-adder {
   position: fixed;
@@ -172,7 +182,7 @@
   margin-top: 5px;
   padding-bottom: 75px;
   text-align: center;
-  overflow: scroll;
+  overflow-y: auto;
   box-shadow: -10px 10px 20px 0px rgba(0, 0, 0, .60);
 }
 #cost-input {
