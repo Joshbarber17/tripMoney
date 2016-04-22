@@ -147,7 +147,7 @@ module.exports = {
         }
     });
   },
-  showPastTripExpenses: function(req, res, next) { //shows all the expenses 
+  showPastTripExpenses: function(req, res, next) { //shows all the expenses
     trip.findOne({_id: req.params.id}).populate('expenses').exec(function(err, trip) {
         if (err) {
           return res.status(500).send(err);
