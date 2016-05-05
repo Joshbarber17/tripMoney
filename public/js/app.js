@@ -31,8 +31,8 @@ angular.module('tripMoney', ['ui.router']).config(function($stateProvider, $urlR
     templateUrl: '../views/pastTripSummary.html',
     controller: 'pastTripSummaryCtrl',
     params: {_id: null}
-  });
-  .stat('login', {
+  })
+  .state('login', {
     url:'/login',
     templateUrl: '../views/login.html',
     controller: 'loginController',
