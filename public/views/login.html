@@ -1,4 +1,35 @@
-<head>
-</head>
-<body>
-</body>
+<section id="login-section" ng-controller="loginController">
+  <div class="backRight"></div>
+  <div class="backLeft"></div>
+</div>
+<div id="slideBox">
+  <div class="topLayer">
+    <div class="left">
+      <div class="content">
+        <h2>Sign Up</h2>
+        <form method="post" onsubmit="return false;">
+          <div class="form-group">
+            <input ng-model="newUser.username" type="text" placeholder="username" />
+            <input ng-model="newUser.email" type="text" placeholder="email" />
+            <input ng-model="newUser.password" type="password" placeholder="password" />
+          </div>
+          <button ng-click="createUser(newUser)">Sign up</button>
+          <button id="goLeft" class="off">Login</button>
+        </form>
+      </div>
+    </div>
+    <div class="right">
+      <div class="content">
+        <h2>Login</h2>
+        <form method="post" onsubmit="return false;">
+          <div class="form-group">
+            <input ng-model="user.username" type="text" placeholder="username" />
+            <input ng-model="user.password" type="password" placeholder="password" />
+          </div>
+          <button ng-click="userLogin(user); currentUser();" id="login" type="submit">Login</button>
+          <button id="goRight" class="off">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
